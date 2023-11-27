@@ -34,7 +34,7 @@ public class SecurityBL{
             throw new RuntimeException("El nombre de usuario ya está en uso.");
         }
         Usuario nuevoUsuario = new Usuario();
-        nuevoUsuario.setNombreUsuario(nombreUsuario);
+        nuevoUsuario.setNombre(nombreUsuario);
         nuevoUsuario.setContra(contrasena);
         usuarioDao.save(nuevoUsuario);
         logger.info("Se ha creado un usuario.");

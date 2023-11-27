@@ -20,7 +20,7 @@ class BackendApplicationTests {
 	void testUsuarioJPA() {
 		List<Usuario> usuariolist=usuarioDao.findAll();
 		for (Usuario u:usuariolist){
-			System.out.println(u.getNombreUsuario());
+			System.out.println(u.getNombre());
 		}
 		assertNotEquals(0, usuariolist.size(),"La base de datos deberia tener registros");
 	}
