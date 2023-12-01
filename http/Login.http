@@ -12,9 +12,13 @@ Accept: application/json
 Content-Type: application/json
 
 {
-"usuario" : "usuario1",
+"usuario" : "Usuario1",
 "contra" : "contra1"
 }
+###
+GET http://localhost:9955/api/v1/open
+Accept: application/json
+Content-Type: application/json
 ###
 GET http://localhost:9955/api/v1/tareas/1
 Accept: application/json

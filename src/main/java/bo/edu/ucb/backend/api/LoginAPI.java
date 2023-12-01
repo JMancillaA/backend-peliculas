@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import bo.edu.ucb.backend.bl.SecurityBL;
 import bo.edu.ucb.backend.dto.LoginRequestDto;
 import bo.edu.ucb.backend.dto.ResponseDto;
+import bo.edu.ucb.backend.dto.SignInDto;
 import bo.edu.ucb.backend.entity.Usuario;
 
 @RestController
@@ -30,10 +31,10 @@ public class LoginAPI {
         return new ResponseDto(usuario);      
     }
     @PostMapping("api/v1/register")
-    public ResponseDto register(@RequestBody LoginRequestDto loginRequestDto) {
+    public ResponseDto register(@RequestBody SignInDto signInDto) {
         logger.info("Se ha recibido una solicitud register.");
         try {
-            securityBL.registrarUsuario(loginRequestDto.getUsuario(), loginRequestDto.getContrasena());
+            securityBL.registrarUsuario(signInDto.getNombre(), signInDto.getEmail(),signInDto.getContra(),signInDto.getPais(),signInDto.getFechaNacimiento());
             return new ResponseDto("Registro exitoso.");
         } catch (RuntimeException ex) {
             return new ResponseDto("TASK-1000", ex.getMessage());
